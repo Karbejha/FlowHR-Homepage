@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark mode transitions */
+@layer base {
+  html {
+    transition: color-scheme 0.3s ease;
+  }
+  
+  body {
+    @apply transition-colors duration-300;
+  }
+  
+  * {
+    @apply border-gray-200 dark:border-gray-700;
+  }
+}
+
+/* Smooth transitions for theme switching */
+@layer components {
+  .theme-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+[dir="rtl"] .space-x-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+[dir="rtl"] .space-x-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+  margin-right: calc(2rem * var(--tw-space-x-reverse));
+  margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+/* RTL Flex Direction */
+[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .lg\:flex-row {
+  flex-direction: row-reverse;
+}
+
+@media (min-width: 1024px) {
+  [dir="rtl"] .lg\:flex-row {
+    flex-direction: row-reverse;
+  }
+}
