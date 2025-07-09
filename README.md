@@ -158,6 +158,55 @@ All content is easily editable within the component files. Update text, features
 ### Images
 Placeholder images are used from Unsplash. Replace with actual company assets in production.
 
+## 🔧 Configuration
+
+### Environment Variables
+
+1. Copy the example environment file:
+```bash
+cp .env.local.example .env.local
+```
+
+2. Update the values in `.env.local` with your actual credentials:
+```env
+NEXT_PUBLIC_GOOGLE_ANALYTICS=G-YOUR_GA4_MEASUREMENT_ID
+NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=your-google-verification-code
+NEXT_PUBLIC_SITE_URL=https://your-domain.vercel.app
+```
+
+⚠️ **Security Note**: Never commit `.env.local` or Google verification HTML files to version control. These files are already protected in `.gitignore`.
+
+### Google Search Console Setup
+
+The website is already configured for Google Search Console verification:
+
+1. **Meta Tag Verification** (Already implemented):
+   - Meta tag is included in the site's `<head>` section
+   - Verification code: `fF5CjwQYDtD0WNpW9hCM-vaJGraaIk4GbtUXqxfHZwQ`
+
+2. **HTML File Verification** (Already implemented):
+   - Verification file: `/public/googled96d8fe7bd564ca7.html`
+
+3. **DNS Verification** (For domain owner):
+   ```
+   TXT Record: google-site-verification=Ha1T_z2Zp6SPuNcmSfSr0lzJf4LezEylV4PB_tk8ilE
+   Domain: flowhr-homepage.vercel.app
+   ```
+
+4. **Google Analytics Verification**:
+   - Add your GA4 tracking ID to `.env.local`
+   - The gtag.js snippet is already implemented in the analytics component
+
+### Search Console Verification Steps
+
+1. Go to [Google Search Console](https://search.google.com/search-console/)
+2. Add property: `https://flowhr-homepage.vercel.app`
+3. Choose verification method:
+   - **HTML tag**: Already implemented in layout.tsx
+   - **HTML file**: Already available at `/googled96d8fe7bd564ca7.html`
+   - **Google Analytics**: Set up GA4 tracking ID
+   - **DNS record**: Add TXT record to your domain provider
+
 ## 📄 License
 
 This project is created for demonstration purposes. Replace with your actual license.
