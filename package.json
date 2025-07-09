@@ -1,22 +1,52 @@
 {
   "name": "flowhr-homepage",
   "version": "0.1.0",
+  "description": "Revolutionary HR Management System - Comprehensive employee management, leave tracking, attendance monitoring, and HR analytics platform",
+  "keywords": [
+    "hr-management",
+    "human-resources",
+    "employee-management",
+    "leave-management",
+    "attendance-tracking",
+    "hr-analytics",
+    "workforce-management",
+    "payroll-system",
+    "hris",
+    "next.js",
+    "typescript",
+    "tailwindcss"
+  ],
+  "homepage": "https://flowhr-homepage.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flowhr/flowhr-homepage.git"
+  },
+  "author": "FlowHR Team <team@flowhr.com>",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "analyze": "ANALYZE=true next build",
+    "seo-audit": "npm run build && npm run lighthouse",
+    "lighthouse": "lhci autorun"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.4",
     "@heroicons/react": "^2.2.0",
+    "@next/bundle-analyzer": "^15.3.5",
     "autoprefixer": "^10.4.21",
     "next": "^14.2.5",
     "next-intl": "^4.3.4",
+    "next-seo": "^6.8.0",
     "next-themes": "^0.4.6",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "web-vitals": "^5.0.3"
   },
   "devDependencies": {
     "@types/node": "^20.19.4",

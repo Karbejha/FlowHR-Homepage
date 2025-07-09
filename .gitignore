@@ -103,3 +103,6 @@ temp/
 *.njsproj
 *.sln
 *.sw?
+
+# Hint configuration
+.hintrc
