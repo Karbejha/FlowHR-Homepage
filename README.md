@@ -1,16 +1,26 @@
-# FlowHR Homepage
+# FlowHR - Revolutionary HR Management System
 
-A modern, fully responsive SaaS homepage for FlowHR - an HR Management System built with Next.js and Tailwind CSS.
+[![Next.js](https://img.shields.io/badge/Next.js-14.2.5-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4.1-38B2AC)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
+FlowHR is a comprehensive HR management system designed for modern businesses. Our platform streamlines HR operations including employee management, leave tracking, attendance monitoring, payroll processing, and performance analytics.
+
+🌐 **Live Demo**: [https://flowhr-homepage.vercel.app](https://flowhr-homepage.vercel.app)
 
 ## 🚀 Features
 
-- **Modern Design**: Clean, professional interface with dark/light mode support
-- **Fully Responsive**: Optimized for desktop, tablet, and mobile devices
-- **Interactive Components**: Collapsible FAQ, mobile navigation, and smooth animations
-- **Semantic HTML**: Proper HTML structure for accessibility and SEO
-- **Performance Optimized**: Built with Next.js 14+ for optimal loading speeds
+- **Employee Management**: Complete employee profiles, role management, and organizational structure
+- **Leave Management**: Streamlined leave application and approval workflow
+- **Attendance Tracking**: Real-time attendance monitoring and reporting
+- **Performance Analytics**: Comprehensive HR metrics and insights
+- **Role-Based Access**: Secure permissions system
+- **Dark Mode Support**: Beautiful UI that works in light and dark themes
+- **Mobile Responsive**: Optimized for all devices
+- **SEO Optimized**: Built with search engine optimization best practices
 
-## 🛠 Tech Stack
+## 🛠️ Tech Stack
 
 - **Framework**: Next.js 14+ with App Router
 - **Styling**: Tailwind CSS 3+

@@ -6,18 +6,22 @@ import Pricing from '@/components/pricing'
 import FAQ from '@/components/faq'
 import CTA from '@/components/cta'
 import Footer from '@/components/footer'
+import StructuredData from '@/components/structured-data'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white dark:bg-gray-900">
-      <Header />
-      <Hero />
-      <Features />
-      <Testimonials />
-      <Pricing />
-      <FAQ />
-      <CTA />
-      <Footer />
-    </main>
+    <>
+      <StructuredData />
+      <main className="min-h-screen bg-white dark:bg-gray-900">
+        <Header />
+        <Hero />
+        <Features />
+        <Testimonials />
+        <Pricing />
+        <FAQ />
+        <CTA />
+        <Footer />
+      </main>
+    </>
   )
 }
