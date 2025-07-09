@@ -58,7 +58,7 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section className="bg-white dark:bg-gray-900 py-24" itemScope itemType="https://schema.org/FAQPage">
+    <section className="bg-white dark:bg-gray-900 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl divide-y divide-gray-900/10 dark:divide-gray-100/10">
           <h2 className="text-3xl font-bold leading-10 tracking-tight text-gray-900 dark:text-white sm:text-4xl text-center">
@@ -69,12 +69,12 @@ export default function FAQ() {
           </p>
           <div className="mt-10 space-y-6 divide-y divide-gray-900/10 dark:divide-gray-100/10">
             {faqs.map((faq, index) => (
-              <Disclosure as="div" key={faq.question} className="pt-6" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+              <Disclosure as="div" key={faq.question} className="pt-6">
                 {({ open }) => (
                   <>
                     <div>
                       <Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900 dark:text-white group">
-                        <span className="text-base font-semibold leading-7" itemProp="name">{faq.question}</span>
+                        <span className="text-base font-semibold leading-7">{faq.question}</span>
                         <span className="ml-6 flex h-7 items-center">
                           <ChevronDownIcon
                             className={`h-6 w-6 transition-transform duration-200 ${
@@ -85,8 +85,8 @@ export default function FAQ() {
                         </span>
                       </Disclosure.Button>
                     </div>
-                    <Disclosure.Panel as="div" className="mt-2 pr-12" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-                      <p className="text-base leading-7 text-gray-600 dark:text-gray-300" itemProp="text">{faq.answer}</p>
+                    <Disclosure.Panel as="div" className="mt-2 pr-12">
+                      <p className="text-base leading-7 text-gray-600 dark:text-gray-300">{faq.answer}</p>
                     </Disclosure.Panel>
                   </>
                 )}
