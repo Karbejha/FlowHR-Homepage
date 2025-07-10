@@ -7,9 +7,9 @@ import { useLanguage } from '@/lib/language-context'
 import { Language } from '@/lib/translations'
 
 const languages = [
-  { code: 'en' as Language, name: 'English', flag: '🇺🇸' },
-  { code: 'ar' as Language, name: 'العربية', flag: '🇸🇦' },
-  { code: 'tr' as Language, name: 'Türkçe', flag: '🇹🇷' },
+  { code: 'en' as Language, name: 'English'},
+  { code: 'ar' as Language, name: 'العربية' },
+  { code: 'tr' as Language, name: 'Türkçe' },
 ]
 
 function classNames(...classes: string[]) {
@@ -26,8 +26,8 @@ export default function LanguageToggle() {
       <div>
         <Menu.Button className="inline-flex items-center gap-x-1.5 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-sm font-semibold text-gray-900 dark:text-gray-100 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700">
           <GlobeAltIcon className="-ml-0.5 h-4 w-4" aria-hidden="true" />
-          <span className="sr-only sm:not-sr-only">{currentLanguage.flag}</span>
-          <ChevronDownIcon className="-mr-1 h-4 w-4 text-gray-400" aria-hidden="true" />
+          <span className="sr-only sm:not-sr-only ml-1">{currentLanguage.name}</span>
+          <ChevronDownIcon className="-mr-1 h-4 w-4 text-gray-400 ml-1" aria-hidden="true" />
         </Menu.Button>
       </div>
 
@@ -50,10 +50,9 @@ export default function LanguageToggle() {
                     className={classNames(
                       active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100' : 'text-gray-700 dark:text-gray-300',
                       language === lang.code ? 'bg-indigo-50 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400' : '',
-                      'group flex w-full items-center px-4 py-2 text-sm'
+                      'group flex w-full items-center justify-center px-4 py-2 text-sm'
                     )}
                   >
-                    <span className="mr-2">{lang.flag}</span>
                     {lang.name}
                   </button>
                 )}
