@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import Arabic fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap');
+
 /* Dark mode transitions */
 @layer base {
   html {
@@ -14,6 +17,16 @@
   
   * {
     @apply border-gray-200 dark:border-gray-700;
+  }
+  
+  /* Language-specific fonts */
+  html[lang="ar"] {
+    font-family: 'Noto Sans Arabic', var(--font-inter), system-ui, sans-serif;
+  }
+  
+  html[lang="en"],
+  html[lang="tr"] {
+    font-family: var(--font-inter), system-ui, sans-serif;
   }
 }
 

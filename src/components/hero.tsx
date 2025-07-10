@@ -1,4 +1,10 @@
+'use client'
+
+import { useLanguage } from '@/lib/language-context'
+
 export default function Hero() {
+  const { t } = useLanguage()
+  
   return (
     <section className="relative bg-white dark:bg-gray-900" itemScope itemType="https://schema.org/SoftwareApplication">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -6,13 +12,10 @@ export default function Hero() {
           {/* Content */}
           <div className="lg:w-1/2 lg:pr-8">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl" itemProp="name">
-              <span itemProp="applicationCategory">HR Management</span>{' '}
-              <span className="text-indigo-600 dark:text-indigo-400">
-                Reinvented
-              </span>
+              <span itemProp="applicationCategory">{t.heroTitle}</span>
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300" itemProp="description">
-              Streamline your HR operations with our comprehensive management system. From employee onboarding to performance tracking, FlowHR simplifies every aspect of human resources management, payroll processing, leave management, and workforce analytics.
+              {t.heroDescription}
             </p>
             
             {/* Trust indicators */}
@@ -43,14 +46,14 @@ export default function Hero() {
                 className="rounded-md bg-indigo-600 dark:bg-indigo-500 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 dark:hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors duration-200"
                 aria-label="Start your free trial of FlowHR"
               >
-                Start Free Trial
+                {t.startFreeTrial}
               </a>
               <a
                 href="#features"
                 className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200"
                 aria-label="Learn more about FlowHR features"
               >
-                Learn More <span aria-hidden="true">→</span>
+                {t.learnMore} <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
