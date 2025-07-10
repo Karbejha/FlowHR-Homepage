@@ -25,13 +25,13 @@ export default function Header() {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="flex h-16 justify-between">
                 <div className="flex">
-                  <div className="flex flex-shrink-0 items-center">
+                  <div className="flex flex-shrink-0 items-center mt-2">
                     <Image
                       src="/logo.png"
                       alt="FlowHR Logo"
-                      width={120}
-                      height={40}
-                      className="h-10 w-auto"
+                      width={210}
+                      height={84}
+                      className="h-14 w-auto"
                       priority
                     />
                   </div>

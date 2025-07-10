@@ -1,9 +1,15 @@
 import type { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
-import PerformanceOptimizer from '@/components/performance-optimizer'
-import Analytics from '@/components/analytics'
+
+// Dynamically import client-only components to prevent build-time errors
+const Analytics = dynamic(() => import('@/components/analytics'), { ssr: false })
+const PerformanceOptimizer = dynamic(
+  () => import('@/components/performance-optimizer'),
+  { ssr: false }
+)
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -105,6 +111,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className={inter.className}>
+        {/* Client-only analytics and performance optimizer loaded dynamically */}
         <Analytics />
         <PerformanceOptimizer />
         <ThemeProvider
