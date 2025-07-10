@@ -50,7 +50,7 @@ export default function LanguageToggle() {
                     className={classNames(
                       active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100' : 'text-gray-700 dark:text-gray-300',
                       language === lang.code ? 'bg-indigo-50 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400' : '',
-                      'group flex w-full items-center justify-center px-4 py-2 text-sm'
+                      'group flex w-full justify-center px-4 py-2 text-sm'
                     )}
                   >
                     {lang.name}
