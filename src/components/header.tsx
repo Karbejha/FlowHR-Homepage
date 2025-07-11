@@ -3,6 +3,9 @@
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import ThemeToggle from './theme-toggle'
+import Image from 'next/image';
+import LanguageToggle from './language-toggle';
+import { useLanguage } from '@/lib/language-context';
 
 export default function Header() {
   const { t } = useLanguage()
