@@ -2,9 +2,6 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
-import { LanguageProvider } from '@/lib/language-context'
-import PerformanceOptimizer from '@/components/performance-optimizer'
-import Analytics from '@/components/analytics'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -102,7 +99,7 @@ export default function RootLayout({
         {/* Optionally keep .ico for legacy support, but png will be primary */}
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="manifest" href="/manifest.json" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />

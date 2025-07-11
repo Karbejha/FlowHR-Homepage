@@ -3,8 +3,6 @@
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import ThemeToggle from './theme-toggle'
-import LanguageToggle from './language-toggle'
-import { useLanguage } from '@/lib/language-context'
 
 export default function Header() {
   const { t } = useLanguage()
@@ -28,10 +26,15 @@ export default function Header() {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="flex h-16 justify-between">
                 <div className="flex">
-                  <div className="flex flex-shrink-0 items-center">
-                    <h1 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
-                      FlowHR
-                    </h1>
+                  <div className="flex flex-shrink-0 items-center mt-2">
+                    <Image
+                      src="/logo.png"
+                      alt="FlowHR Logo"
+                      width={210}
+                      height={84}
+                      className="h-14 w-auto"
+                      priority
+                    />
                   </div>
                   <div className="hidden sm:-my-px sm:ml-10 sm:rtl:mr-10 sm:rtl:ml-0 sm:flex sm:space-x-8 sm:rtl:space-x-reverse">
                     {navigation.map((item) => (
