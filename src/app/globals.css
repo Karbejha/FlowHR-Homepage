@@ -108,8 +108,20 @@
     animation-delay: 1s;
   }
 
-  /* Fade in animation for images */
-  @keyframes fade-in {
+  /* Fade in animation for images - light mode */
+  @keyframes fade-in-light {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 0.2;
+      transform: scale(1);
+    }
+  }
+
+  /* Fade in animation for images - dark mode */
+  @keyframes fade-in-dark {
     0% {
       opacity: 0;
       transform: scale(0.8);
@@ -121,7 +133,11 @@
   }
 
   .animate-fade-in {
-    animation: fade-in 1s ease-out forwards;
+    animation: fade-in-light 1s ease-out forwards;
+  }
+
+  .dark .animate-fade-in {
+    animation: fade-in-dark 1s ease-out forwards;
   }
 
   /* Initially hide elements that will fade in */
@@ -147,6 +163,11 @@
     }
     
     .animate-fade-in {
+      opacity: 0.2;
+      transform: scale(1);
+    }
+    
+    .dark .animate-fade-in {
       opacity: 0.25;
       transform: scale(1);
     }

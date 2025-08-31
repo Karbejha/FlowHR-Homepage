@@ -7,6 +7,9 @@ import { useEffect } from 'react'
 // Google Analytics tracking ID - replace with your actual GA4 measurement ID
 const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || 'G-XXXXXXXXXX'
 
+// Hotjar tracking ID
+const HOTJAR_ID = process.env.NEXT_PUBLIC_HOTJAR_ID || '6507622'
+
 export default function Analytics() {
   const pathname = usePathname()
 
@@ -116,12 +119,12 @@ export default function Analytics() {
         `}
       </Script>
 
-      {/* Hotjar (optional) */}
+      {/* Hotjar Tracking Code for https://flowhr.karbejha.site */}
       <Script id="hotjar" strategy="afterInteractive">
         {`
           (function(h,o,t,j,a,r){
             h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:YOUR_HOTJAR_ID,hjsv:6};
+            h._hjSettings={hjid:${HOTJAR_ID},hjsv:6};
             a=o.getElementsByTagName('head')[0];
             r=o.createElement('script');r.async=1;
             r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
