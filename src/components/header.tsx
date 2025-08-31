@@ -3,6 +3,7 @@
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import ThemeToggle from './theme-toggle'
+import Logo from './logo'
 
 export default function Header() {
   const navigation = [
@@ -25,9 +26,7 @@ export default function Header() {
               <div className="flex h-16 justify-between">
                 <div className="flex">
                   <div className="flex flex-shrink-0 items-center">
-                    <h1 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
-                      FlowHR
-                    </h1>
+                    <Logo />
                   </div>
                   <div className="hidden sm:-my-px sm:ml-10 sm:flex sm:space-x-8">
                     {navigation.map((item) => (
