@@ -1,4 +1,8 @@
+'use client'
+
+import { useState } from 'react'
 import { CheckIcon } from '@heroicons/react/20/solid'
+import ContactModal from './contact-modal'
 
 const tiers = [
   {
@@ -60,7 +64,10 @@ function classNames(...classes: string[]) {
 }
 
 export default function Pricing() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  
   return (
+    <>
     <section id="pricing" className="bg-gray-50 dark:bg-gray-800 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
@@ -124,22 +131,28 @@ export default function Pricing() {
                   ))}
                 </ul>
               </div>
-              <a
-                href={tier.href}
+              <button
+                onClick={() => setIsModalOpen(true)}
                 aria-describedby={tier.id}
                 className={classNames(
                   tier.mostPopular
                     ? 'bg-indigo-600 text-white shadow-sm hover:bg-indigo-500'
                     : 'bg-white dark:bg-gray-800 text-indigo-600 dark:text-indigo-400 ring-1 ring-inset ring-indigo-200 dark:ring-indigo-600 hover:ring-indigo-300 dark:hover:ring-indigo-500',
-                  'mt-8 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-all duration-200'
+                  'mt-8 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-all duration-200 w-full'
                 )}
               >
                 Get started today
-              </a>
+              </button>
             </div>
           ))}
         </div>
       </div>
     </section>
+
+    <ContactModal 
+      isOpen={isModalOpen} 
+      onClose={() => setIsModalOpen(false)} 
+    />
+    </>
   )
 }
