@@ -1,11 +1,14 @@
 'use client'
 
+import { useState } from 'react'
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import ThemeToggle from './theme-toggle'
 import Logo from './logo'
+import ContactModal from './contact-modal'
 
 export default function Header() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const navigation = [
     { name: 'Home', href: '#', current: true },
     { name: 'Features', href: '#features', current: false },
@@ -54,12 +57,12 @@ export default function Header() {
                   >
                     Login
                   </a>
-                  <a
-                    href="#"
+                  <button
+                    onClick={() => setIsModalOpen(true)}
                     className="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:hover:bg-indigo-400"
                   >
                     Get Started
-                  </a>
+                  </button>
                 </div>
                 <div className="-mr-2 flex items-center sm:hidden">
                   <div className="mr-2">
@@ -104,18 +107,22 @@ export default function Header() {
                   >
                     Login
                   </a>
-                  <a
-                    href="#"
+                  <button
+                    onClick={() => setIsModalOpen(true)}
                     className="inline-flex items-center rounded-md bg-indigo-600 dark:bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 dark:hover:bg-indigo-400"
                   >
                     Get Started
-                  </a>
+                  </button>
                 </div>
               </div>
             </Disclosure.Panel>
           </>
         )}
       </Disclosure>
+      <ContactModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </header>
   )
 }

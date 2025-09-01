@@ -2,11 +2,13 @@
 
 import { useEffect, useState, useCallback, useMemo } from 'react'
 import Image from 'next/image'
+import ContactModal from './contact-modal'
 
 export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isLoaded, setIsLoaded] = useState(false)
   const [scrollY, setScrollY] = useState(0)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
     setMousePosition({ x: e.clientX, y: e.clientY })
@@ -180,14 +182,14 @@ export default function Hero() {
 
             {/* Call to Action Buttons */}
             <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 animate-fade-in-up animation-delay-800">
-              <a
-                href="#pricing"
+              <button
+                onClick={() => setIsModalOpen(true)}
                 className="group relative px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-semibold rounded-full shadow-2xl hover:shadow-indigo-500/25 transition-all duration-300 transform hover:scale-105"
                 aria-label="Start your free trial of FlowHR"
               >
                 <span className="relative z-10">Start Free Trial</span>
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 blur transition-all duration-300"></div>
-              </a>
+              </button>
               <a
                 href="#features"
                 className="group flex items-center px-8 py-4 text-gray-700 dark:text-white font-semibold bg-white/60 dark:bg-white/10 backdrop-blur-sm hover:bg-white/80 dark:hover:bg-white/20 rounded-full border border-gray-300/50 dark:border-white/20 hover:border-gray-400/60 dark:hover:border-white/40 transition-all duration-300"
@@ -226,6 +228,11 @@ export default function Hero() {
 
       {/* Bottom Fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-50 dark:from-slate-900 to-transparent"></div>
+      
+      <ContactModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </section>
   )
 }

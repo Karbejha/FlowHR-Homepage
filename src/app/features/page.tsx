@@ -1,25 +1,11 @@
-import { Metadata } from 'next'
+'use client'
 
-export const metadata: Metadata = {
-  title: 'FlowHR Features - Complete HR Management Solution',
-  description: 'Discover FlowHR\'s powerful features: employee management, leave tracking, attendance monitoring, analytics & reports, and role-based access control. Transform your HR operations today.',
-  keywords: [
-    'hr management features',
-    'employee management system',
-    'leave tracking software',
-    'attendance monitoring',
-    'hr analytics dashboard',
-    'role-based access control',
-    'workforce management tools'
-  ],
-  openGraph: {
-    title: 'FlowHR Features - Complete HR Management Solution',
-    description: 'Powerful HR features including employee management, leave tracking, attendance monitoring, and advanced analytics.',
-    type: 'website',
-  },
-}
+import { useState } from 'react'
+import ContactModal from '@/components/contact-modal'
 
 export default function FeaturesPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  
   const features = [
     {
       title: 'Employee Management',
@@ -99,6 +85,7 @@ export default function FeaturesPage() {
   ]
 
   return (
+    <>
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
       <div className="bg-gray-50 dark:bg-gray-800">
@@ -238,15 +225,29 @@ export default function FeaturesPage() {
             Join thousands of companies using FlowHR to streamline their workforce management.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-indigo-600 hover:bg-gray-50 px-8 py-3 rounded-lg font-semibold transition-colors duration-200">
+            <button 
+              onClick={() => setIsModalOpen(true)}
+              className="bg-white text-indigo-600 hover:bg-gray-50 px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
+            >
               Start Free Trial
             </button>
-            <button className="border border-white text-white hover:bg-white hover:text-indigo-600 px-8 py-3 rounded-lg font-semibold transition-colors duration-200">
+            <a 
+              href="https://calendar.app.google/UBM9D3m7Uw3uTN719"
+              target="_blank"
+              rel="noopener"
+              className="border border-white text-white hover:bg-white hover:text-indigo-600 px-8 py-3 rounded-lg font-semibold transition-colors duration-200 inline-block text-center"
+            >
               Schedule Demo
-            </button>
+            </a>
           </div>
         </div>
       </div>
     </div>
+
+    <ContactModal 
+      isOpen={isModalOpen} 
+      onClose={() => setIsModalOpen(false)} 
+    />
+    </>
   )
 }

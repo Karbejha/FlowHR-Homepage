@@ -1,25 +1,10 @@
-import { Metadata } from 'next'
+'use client'
 
-export const metadata: Metadata = {
-  title: 'FlowHR Pricing - Affordable HR Management Plans for Every Business',
-  description: 'Simple, transparent pricing for FlowHR. Choose from Basic ($9/month), Pro ($29/month), or Enterprise ($99/month) plans. All plans include 14-day free trial. No credit card required.',
-  keywords: [
-    'hr software pricing',
-    'hr management cost',
-    'employee management pricing',
-    'leave tracking software price',
-    'hr system cost',
-    'business hr plans',
-    'workforce management pricing'
-  ],
-  openGraph: {
-    title: 'FlowHR Pricing - Affordable HR Management for Every Business',
-    description: 'Simple, transparent pricing starting at $9/month. 14-day free trial included.',
-    type: 'website',
-  },
-}
+import { useState } from 'react'
+import ContactModal from '@/components/contact-modal'
 
 export default function PricingPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const plans = [
     {
       name: 'Basic',
@@ -70,6 +55,7 @@ export default function PricingPage() {
   ]
 
   return (
+    <>
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
       <div className="bg-gray-50 dark:bg-gray-800">
@@ -134,6 +120,7 @@ export default function PricingPage() {
               </ul>
 
               <button
+                onClick={() => setIsModalOpen(true)}
                 className={`w-full py-3 px-4 rounded-lg font-semibold transition-colors duration-200 ${
                   plan.popular
                     ? 'bg-indigo-600 hover:bg-indigo-700 text-white'
@@ -202,15 +189,29 @@ export default function PricingPage() {
             Start your 14-day free trial today. No credit card required.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200">
+            <button 
+              onClick={() => setIsModalOpen(true)}
+              className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
+            >
               Start Free Trial
             </button>
-            <button className="border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200">
+            <a 
+              href="https://calendar.app.google/UBM9D3m7Uw3uTN719"
+              target="_blank"
+              rel="noopener"
+              className="border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200 inline-block text-center"
+            >
               Schedule Demo
-            </button>
+            </a>
           </div>
         </div>
       </div>
     </div>
+
+    <ContactModal 
+      isOpen={isModalOpen} 
+      onClose={() => setIsModalOpen(false)} 
+    />
+    </>
   )
 }
