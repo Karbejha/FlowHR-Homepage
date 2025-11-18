@@ -14,6 +14,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/admin/'],
       },
     ],
-    sitemap: 'https://flowhr-homepage.vercel.app/sitemap.xml',
+    sitemap: 'https://flowhr.karbejha.site/sitemap.xml',
   }
 }

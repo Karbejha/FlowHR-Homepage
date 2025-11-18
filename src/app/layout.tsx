@@ -39,14 +39,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://flowhr-homepage.vercel.app'),
+  metadataBase: new URL('https://flowhr.karbejha.site'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'FlowHR - Revolutionary HR Management System',
     description: 'Transform your HR operations with FlowHR - the most advanced HR management system. Features include employee management, leave tracking, attendance monitoring, and more.',
-    url: 'https://flowhr-homepage.vercel.app',
+    url: 'https://flowhr.karbejha.site',
     siteName: 'FlowHR',
     images: [
       {
